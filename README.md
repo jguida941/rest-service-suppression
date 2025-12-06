@@ -46,6 +46,15 @@
 | tomcat-embed 9.0.30     | Numerous CVEs         | Upgrade via newer Spring Boot (Tomcat ≥ 9.0.80+) |
 | Spring Boot 2.2.4       | Multiple CVEs         | Upgrade to 2.7.x or 3.x                          |
 
+
+## Before Suppression: 
+<img width="1009" height="499" alt="Screenshot 2025-12-06 at 12 59 40 PM" src="https://github.com/user-attachments/assets/468d9658-6c53-4547-a1f3-69b50a28a0d6" />
+
+
+## After Suppression: 
+<img width="1021" height="720" alt="Screenshot 2025-12-06 at 12 59 17 PM" src="https://github.com/user-attachments/assets/975ebefd-c465-48b5-bcd0-ebfb55ffc143" />
+
+
 ## Verification
 
 After adding suppressions:
