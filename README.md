@@ -1,5 +1,7 @@
 # Vulnerability Suppression Documentation
 
+Purpose: run `mvn verify` with dependency-check, capture the “before” report, add suppressions via `suppression.xml` (wired in `pom.xml`), and capture the “after” report showing the suppressed items removed from findings.
+
 ## How to Run and Locate Reports
 
 - Run from `rest-service`: `mvn verify`
@@ -38,21 +40,21 @@
 
 ## Remaining Vulnerabilities (upgrade in production)
 
-| Component               | Issue                 | Recommendation                                   |
-|-------------------------|-----------------------|--------------------------------------------------|
-| snakeyaml 1.25          | Multiple DoS/RCE CVEs | Upgrade ≥ 2.0                                    |
-| jackson-databind 2.10.2 | XXE/DoS CVEs          | Upgrade ≥ 2.15                                   |
-| bcprov-jdk15on 1.46     | Crypto weaknesses     | Upgrade ≥ 1.70 or remove if unused               |
-| tomcat-embed 9.0.30     | Numerous CVEs         | Upgrade via newer Spring Boot (Tomcat ≥ 9.0.80+) |
-| Spring Boot 2.2.4       | Multiple CVEs         | Upgrade to 2.7.x or 3.x                          |
+| Component               | Issue                 | Recommendation                                     |
+|-------------------------|-----------------------|----------------------------------------------------|
+| snakeyaml 1.25          | Multiple DoS/RCE CVEs | Upgrade ≥ 2.0                                      |
+| jackson-databind 2.10.2 | XXE/DoS CVEs          | Upgrade ≥ 2.15                                     |
+| bcprov-jdk15on 1.46     | Crypto weaknesses     | Upgrade ≥ 1.70 or remove if unused                 |
+| tomcat-embed 9.0.30     | Numerous CVEs         | Upgrade via newer Spring Boot (Tomcat ≥ 9.0.80+)   |
+| Spring Boot 2.2.4       | Multiple CVEs         | Upgrade to 2.7.x or 3.x                            |
 
+## Reports (before and after suppression)
 
-## Before Suppression: 
-<img width="1009" height="499" alt="Screenshot 2025-12-06 at 12 59 40 PM" src="https://github.com/user-attachments/assets/468d9658-6c53-4547-a1f3-69b50a28a0d6" />
+- Before suppression (all findings visible):
+  <img width="1009" height="499" alt="Screenshot 2025-12-06 at 12 59 40 PM" src="https://github.com/user-attachments/assets/468d9658-6c53-4547-a1f3-69b50a28a0d6" />
 
-
-## After Suppression: 
-<img width="1021" height="720" alt="Screenshot 2025-12-06 at 12 59 17 PM" src="https://github.com/user-attachments/assets/975ebefd-c465-48b5-bcd0-ebfb55ffc143" />
+- After suppression (see “Vulnerabilities Suppressed” section in the HTML):
+  <img width="1021" height="720" alt="Screenshot 2025-12-06 at 12 59 17 PM" src="https://github.com/user-attachments/assets/975ebefd-c465-48b5-bcd0-ebfb55ffc143" />
 
 
 ## Verification
