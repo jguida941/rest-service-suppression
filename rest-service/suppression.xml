@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+
+    <!-- Spring4Shell: Not exploitable - requires JDK 9+ and WAR deployment on Tomcat.
+         This application uses JDK 8 and runs as an executable JAR. -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2022-22965 (Spring4Shell): Not exploitable in this project context.
+            Exploit requires: JDK 9+ AND WAR deployment on Tomcat.
+            This app uses: JDK 8 AND executable JAR packaging.
+            The known exploit path is blocked by our runtime environment.
+        ]]></notes>
+        <cve>CVE-2022-22965</cve>
+    </suppress>
+
+    <!-- WebFlux privilege escalation: Feature not used - this app uses Spring MVC only -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2021-22118: Not applicable - feature not used.
+            This vulnerability affects Spring WebFlux applications only.
+            This application uses Spring MVC, not WebFlux.
+        ]]></notes>
+        <cve>CVE-2021-22118</cve>
+    </suppress>
+
+    <!-- STOMP over WebSocket DoS: Feature not used - no WebSocket endpoints -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2022-22971: Not applicable - feature not used.
+            Requires STOMP over WebSocket endpoints.
+            This application has no WebSocket endpoints configured.
+        ]]></notes>
+        <cve>CVE-2022-22971</cve>
+    </suppress>
+
+    <!-- Cloud Foundry security bypass: Deployment not applicable -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2023-20873: Not applicable - deployment environment not used.
+            This vulnerability only affects applications deployed to Cloud Foundry.
+            This application is not deployed to Cloud Foundry.
+        ]]></notes>
+        <cve>CVE-2023-20873</cve>
+    </suppress>
+
+    <!-- Log4j SMTP appender certificate validation: Component not configured -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2020-9488: Not applicable - component not configured.
+            Affects Log4j SMTP appender only.
+            This application does not configure or use the SMTP appender.
+        ]]></notes>
+        <cve>CVE-2020-9488</cve>
+    </suppress>
+
+    <!-- Logback JNDI injection: Requires privileged configuration access -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2021-42550: Not applicable in standard deployment.
+            Exploitation requires attacker to have privileges to edit logback configuration files.
+            In our deployment, configuration files are not writable by untrusted users.
+        ]]></notes>
+        <cve>CVE-2021-42550</cve>
+    </suppress>
+
+    <!-- Logback receiver DoS: Component not used -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2023-6378: Not applicable - component not used.
+            Affects logback receiver component for remote logging.
+            This application does not enable or use remote logging receivers.
+        ]]></notes>
+        <cve>CVE-2023-6378</cve>
+    </suppress>
+
+    <!-- Hibernate Validator SafeHtml XSS: Feature not used -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2023-1932: Not applicable - feature not used.
+            Requires use of @SafeHtml annotation in bean validation.
+            This application does not use @SafeHtml validation.
+        ]]></notes>
+        <cve>CVE-2023-1932</cve>
+    </suppress>
+
+    <!-- Hibernate Validator EL injection: Feature not used -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2020-10693: Not applicable - feature not used.
+            Requires user-controlled input in constraint violation messages with EL interpolation.
+            This application does not include user input in validation error messages.
+        ]]></notes>
+        <cve>CVE-2020-10693</cve>
+    </suppress>
+
+    <!-- Hibernate Validator EL injection (2025): Feature not used -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2025-35036: Not applicable - feature not used.
+            Requires user-supplied input in constraint violation messages.
+            This application does not interpolate user input in validation messages.
+        ]]></notes>
+        <cve>CVE-2025-35036</cve>
+    </suppress>
+
+    <!-- Jackson cyclic dependencies DoS: Vendor disputed, not applicable -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2023-35116: Not applicable - vendor disputed.
+            Vendor states this requires constructing cyclic data structures and serializing them,
+            which cannot be achieved by an external attacker.
+            This application does not construct cyclic structures from untrusted input.
+        ]]></notes>
+        <cve>CVE-2023-35116</cve>
+    </suppress>
+
+    <!-- Spring HttpInvoker deserialization: Untrusted deserialization not present -->
+    <suppress>
+        <notes><![CDATA[
+            CVE-2016-1000027: Not applicable - untrusted deserialization not present.
+            Vendor states untrusted data deserialization is not an intended use case.
+            This application does not deserialize untrusted data via HttpInvoker or similar mechanisms.
+        ]]></notes>
+        <cve>CVE-2016-1000027</cve>
+    </suppress>
+
+</suppressions>
