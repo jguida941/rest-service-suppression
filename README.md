@@ -56,8 +56,6 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 ## Report after suppression (see “Vulnerabilities Suppressed” section in the HTML)
 <img width="1034" height="687" alt="Screenshot 2025-12-07 at 5 27 45 AM" src="https://github.com/user-attachments/assets/e31c1e5d-9d02-417e-99bb-aa577edf8f6e" />
 
-<br>
-
 ## Verification
 
 After adding suppressions:
@@ -68,13 +66,11 @@ mvn verify
 
 Expect the dependency-check report to show the suppressed items as removed from the findings.
 
-## Submission Checklist
-
+## Project Deliverables
 - Updated `pom.xml` (includes suppressionFiles config)
 - `suppression.xml` with suppress entries
 - HTML reports: before and after suppression
-- (If needed) screenshots of before/after reports
-- Note in your write-up: the “after” report’s “Vulnerabilities Suppressed” section lists the suppressed CVEs, demonstrating the suppressions were applied.
+- The “Vulnerabilities Suppressed” section of the after report must list the suppressed CVEs, confirming that the suppressions are active.
 
 ## References
 
