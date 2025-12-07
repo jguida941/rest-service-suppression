@@ -19,9 +19,7 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 - Not deployed to Cloud Foundry
 - Logging: no SMTP appender, no logback remote receiver
 
-**Note:** These are not global false positives—the versions are in vulnerable ranges. We suppress because the exploit paths are not reachable in this app’s runtime/deployment.
-
-<br>
+**Note:** These are not global false positives-the versions are in vulnerable ranges. We suppress because the exploit paths are not reachable in this app’s runtime/deployment.
 
 ## Suppressed CVEs (non-exploitable in this app)
 
@@ -40,7 +38,6 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 | CVE-2023-35116                | jackson-databind 2.10.2              | Vendor-disputed; no untrusted cyclic structures here            |
 | CVE-2016-1000027              | Spring Framework 5.2.3.RELEASE       | No untrusted Java deserialization (no HttpInvoker)              |
 
-<br>
 
 ## Remaining Vulnerabilities (upgrade in production)
 
@@ -52,7 +49,6 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 | tomcat-embed 9.0.30     | Numerous CVEs         | Upgrade via newer Spring Boot (Tomcat ≥ 9.0.80+)   |
 | Spring Boot 2.2.4       | Multiple CVEs         | Upgrade to 2.7.x or 3.x                            |
 
-<br>
 
 ## Report before suppression (all findings visible)
 <img width="997" height="522" alt="Screenshot 2025-12-07 at 5 26 31 AM" src="https://github.com/user-attachments/assets/0153f41f-5357-4c0f-b518-750ffcada336" />
