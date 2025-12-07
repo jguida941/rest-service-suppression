@@ -21,6 +21,8 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 
 **Note:** These are not global false positives—the versions are in vulnerable ranges. We suppress because the exploit paths are not reachable in this app’s runtime/deployment.
 
+<br>
+
 ## Suppressed CVEs (non-exploitable in this app)
 
 | CVE                           | Component                            | Why not exploitable here                                        |
@@ -38,6 +40,8 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 | CVE-2023-35116                | jackson-databind 2.10.2              | Vendor-disputed; no untrusted cyclic structures here            |
 | CVE-2016-1000027              | Spring Framework 5.2.3.RELEASE       | No untrusted Java deserialization (no HttpInvoker)              |
 
+<br>
+
 ## Remaining Vulnerabilities (upgrade in production)
 
 | Component               | Issue                 | Recommendation                                     |
@@ -48,14 +52,15 @@ Purpose: run `mvn verify` with dependency-check, capture the “before” report
 | tomcat-embed 9.0.30     | Numerous CVEs         | Upgrade via newer Spring Boot (Tomcat ≥ 9.0.80+)   |
 | Spring Boot 2.2.4       | Multiple CVEs         | Upgrade to 2.7.x or 3.x                            |
 
-## Reports (before and after suppression)
+<br>
 
-- Before suppression (all findings visible):
-  <img width="1009" height="499" alt="Screenshot 2025-12-06 at 12 59 40 PM" src="https://github.com/user-attachments/assets/468d9658-6c53-4547-a1f3-69b50a28a0d6" />
+## Report before suppression (all findings visible)
+<img width="997" height="522" alt="Screenshot 2025-12-07 at 5 26 31 AM" src="https://github.com/user-attachments/assets/0153f41f-5357-4c0f-b518-750ffcada336" />
 
-- After suppression (see “Vulnerabilities Suppressed” section in the HTML):
-  <img width="1021" height="720" alt="Screenshot 2025-12-06 at 12 59 17 PM" src="https://github.com/user-attachments/assets/975ebefd-c465-48b5-bcd0-ebfb55ffc143" />
+## Report after suppression (see “Vulnerabilities Suppressed” section in the HTML)
+<img width="1034" height="687" alt="Screenshot 2025-12-07 at 5 27 45 AM" src="https://github.com/user-attachments/assets/e31c1e5d-9d02-417e-99bb-aa577edf8f6e" />
 
+<br>
 
 ## Verification
 
